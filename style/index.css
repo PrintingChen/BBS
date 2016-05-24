@@ -1,0 +1,170 @@
+@CHARSET "UTF-8";
+.chart{
+	background: #fff;
+	width: 100%;
+	height: 64px;
+	margin: 15px 0 10px 0;
+	border-radius: 5px;
+	font-size: 12px;
+	color: #444;
+	font-family: 'Microsoft yahei';
+}
+.chart p{
+	width: 300px;
+	height: 64px;
+	padding-left: 50px;
+	line-height: 64px;
+	background: url('../images/chart.png') no-repeat 20px 25px;
+	float: left;
+}
+.chart p em{
+	font-size: 18px;
+	color: #fa5000;
+}
+.pipe{
+	color: #ccc;
+	margin: 0 10px;
+}
+.chart .quick-thread-box{
+	float: right;
+    line-height: 26px;
+    margin: 9px 15px 0px;
+}
+.quick-thread{
+	width: 206px;
+    height: 46px;
+    line-height: 46px;
+    margin-right: 0;
+    float: right;
+    color: #F3FFD9;
+    font-size: 16px;
+    text-align: center;
+    background-position: 0px -250px;
+    background: url('../images/button_new.png');    
+    text-indent: 35px;
+    padding-left: 15px;
+}
+.quick-thread:hover{
+	cursor: pointer;
+	color: #fff;
+	background-position: -225px -250px;
+	text-indent: 20px;
+    padding-left: 15px;
+}
+.btn-base{
+	text-align: center;
+    color: #fff;
+    font-size: 18px;
+}
+.clear:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.quote_reply{
+	width: 100%;
+	height: 350px;
+	margin-bottom: 10px;
+	background-color: #fff;
+	font-family: 'Microsoft soft';
+}
+h4{
+	line-height: 30px;
+	border-bottom: 1px solid #666;
+}
+.quote_reply .latest_quote{
+	width: 475px;
+	float: left;
+}
+.quote_reply .latest_quote ul li{
+	line-height: 30px;
+	border-bottom: 1px dashed #666;
+	padding-left: 10px;
+	position: relative;
+}
+.quote_reply .latest_quote ul li span{
+	position: absolute;
+	right: 2px;
+	top: 0px;
+	color: #f60;
+}
+.quote_reply .latest_quote ul li a{
+	color: #666;
+}
+.quote_reply .latest_quote ul li a:hover{
+	color: #33ac0a;
+}
+.quote_reply .latest_reply{
+	width: 475px;
+	float: right;
+}
+/*版块样式*/
+.box{
+	background: #fff;
+	margin-bottom: 10px;
+}
+.box .title{
+	width: 100%;
+	height: 35px;
+	background: #e2e2e2;
+	position: relative;
+}
+.box .title h2{
+	font-size: 16px;
+	padding: 0 10px;
+	height: 35px;
+	line-height: 35px;
+}
+.box .title h2 a{
+	display: inline-block;
+	color: #369;
+	font-weight: 600;
+}
+.box .title h2 a:hover{
+	text-decoration: underline;
+}
+.box .title .collapsed{
+	display: block;
+	position: absolute;
+	width: 17px;
+	height: 17px;
+	background: url('../images/collapsed_no.png') no-repeat;
+	right: 15px;
+    top: 10px;
+    cursor: pointer;
+}
+.box .childlist{
+	padding: 10px;
+}
+.box .childlist .cl{
+	width: 100%;
+}
+.box .childlist .cl_row{
+}
+.box .childlist .cl .cl_col{
+	border-bottom: 1px dashed #ccc;
+	float: left;
+	width: 28%;
+	padding:10px 0;
+	padding-left: 45px;
+	background: url('../images/forum_new.gif') no-repeat 0 20%;
+}
+.box .childlist .cl .cl_col dl dt{
+	padding-bottom: 3px;
+
+}
+.box .childlist .cl .cl_col dl dt a{
+	font-size: 14px;
+	color: #333;
+}
+.box .childlist .cl .cl_col dl dt a:hover{
+	text-decoration: underline;
+}
+.box .childlist .cl .cl_col dl dd{
+	font-size: 12px;
+	padding: 2px 0;
+	color: #666;
+}

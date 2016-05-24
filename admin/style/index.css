@@ -1,0 +1,9 @@
+.title{
+	line-height: 40px;
+	font-size: 18px;
+}
+.explain li{
+	line-height: 30px;
+	padding-left: 20px;
+	background: url('../images/qidong.png') no-repeat 0% 50%;
+}

@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+table.au input{
+	width: 300px;
+	height: 30px;
+	padding: 0 4px;
+}
+table.au textarea{
+	width: 300px;
+	height: 30px;
+}
+table.au tr{
+	background: url('../images/hr.png') 0 bottom repeat-x;
+}
+table.au tr td{
+	text-align: left;
+	padding: 10px 40px 20px 0;
+}
+table.au tr td.condition {
+	color:#999;
+}

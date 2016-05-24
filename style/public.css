@@ -1,0 +1,121 @@
+@CHARSET "UTF-8";
+/* 清除内外边距 */
+html, body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, div, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+}
+body{
+	background: #f4f4f4;
+    color: #333;
+}
+img{
+	border: 0;
+}
+em, strong, i, h1, h2, h3, h4, h5, h6{
+	font-style: normal;
+	font-weight: normal;
+}
+table{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+input:focus{
+	outline:none;
+	border:0;
+}
+/*弹框样式*/
+#cover{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: #000;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+	z-index: 999;	
+}
+#tip_win{
+	display: none;
+	position: absolute;
+	width: 400px;
+	height: 300px;
+	background: #fff;
+	left: 50%;
+	top: 50%;
+	margin-left: -200px;
+	margin-top: -150px;
+	z-index: 1000000;
+}
+#tip_win:hover{
+	cursor: move;
+}
+#tip_win p.tip_win_title{
+	padding: 12px 20px;
+	font-size: 18px;
+	background: #f7f7f7;
+	border-bottom: 1px solid #e9e9e9;
+	vertical-align: middle;
+}
+#tip_win div.tip_delete{
+	padding-top: 150px;
+	text-align: center;
+	font-size: 15px;
+	background: url("../images/shanchu.png") no-repeat 49% 25%;
+}
+#tip_win p.tip_win_title a.close{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 16px;
+	top: 18px;
+	background: url('../images/guanbi_gray.png');
+}
+#tip_win p.tip_win_title a.close:hover{
+	background: url('../images/guanbi_red.png');
+}
+#tip_win p.tip_win_btn{
+	text-align: center;
+	margin-top: 15px;
+}
+#tip_win p.tip_win_btn a.tip_btn{
+	display: inline-block;
+	text-decoration: none;
+	border-radius: 3px;
+	padding: 8px 20px;
+}
+#tip_win p.tip_win_btn a.tip_btn:hover{
+	cursor: pointer;
+}
+#tip_win p.tip_win_btn a#delete_ok{
+	background: #EB5651;
+	margin-right: 10px;	
+	color: #fff;
+}
+#tip_win p.tip_win_btn a#delete_cancel{
+	background: #ccc;
+	color: #666;
+}
+
+.footer{
+	text-align: center;
+	font-size: 14px;
+	color: #666;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+.footer p{
+	line-height: 30px;
+}

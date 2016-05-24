@@ -1,0 +1,95 @@
+@CHARSET "UTF-8";
+#register{
+	background: #fff;
+	box-shadow: 0 0 5px #ccc;
+	border-radius: 3px;
+}
+#register h2{
+	font-size: 16px;
+	font-weight: 700;
+	color: #666;
+	padding: 10px 15px;
+	border-bottom: 1px solid #ededed;
+}
+#register form {
+	color:#333;
+}
+#register form label {
+	display:block;
+	font-size: 14px;
+    line-height: 25px;
+    float:right;
+    margin:40px 170px 0 0;
+}
+#register form label.sex_on{
+	margin: 40px 0 0 0;
+	float: left;
+	margin-left: 204px;
+	line-height: 25px;
+}
+#register form label input {
+	width:230px;
+	height:18px;
+	background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow:2px 2px 2px #f0f0f0 inset;
+    color: #333;
+    font-family: inherit;
+    line-height: 18px;
+    margin: 0;
+    padding: 4px;
+    vertical-align: middle;
+    font-size: 12px;
+    border-radius: 2px;
+}
+#register form label input.sex {
+	width: 30px;
+    box-shadow:none;
+    text-align: left;
+    border: 0;
+    outline: 0;
+}
+
+#register form span {
+	width:300px;
+	display:inline-block;
+	color:#999;
+	font-size:12px;
+	margin:0 0 0 5px;
+}
+.btn {
+	border-radius: 2px;
+    font-size: 14px;
+    line-height: normal;
+    padding: 6px 18px;
+    border: 1px solid #b1aeae;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: normal;
+    margin: 0;
+    overflow: visible;
+    padding: 4px 10px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    background: #0e78e7;
+    background: -webkit-linear-gradient(top,#0e7bef,#0d73da);
+    background: linear-gradient(to bottom,#0e7bef,#0d73da);
+}
+#register .btn {
+	margin:20px 0 60px 190px;
+}
+#register img.vcode{
+	display: block;
+    float: left;
+    margin: 20px 0 0 244px;
+    cursor: pointer;
+}
+input:focus{
+	border:1px solid #0E7BEF;
+}

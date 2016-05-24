@@ -1,0 +1,68 @@
+body {
+	background:#f7f7f7;
+	font-size:14px;
+}
+.t1{
+	width: 150px;
+	height: 70px;
+	font-size: 32px;
+	color: #0E78E6;
+	line-height: 70px;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: -85px;
+	margin-left: -75px;
+	font-family: 'microsoft yahei';
+	font-weight: 800;
+}
+#main {
+	width:360px;
+	height:320px;
+	background:#fff;
+	border:1px solid #ddd;
+	position:absolute;
+	top:40%;
+	left:50%;
+	margin-left:-180px;
+	margin-top:-160px;
+}
+#main .title {
+	height: 48px;
+	line-height: 48px;
+	color:#333;
+	font-size:16px;
+	font-weight:bold;
+	text-indent:30px;
+	border-bottom:1px dashed #eee;
+}
+#main form {
+	width:300px;
+	margin:20px 0 0 40px;
+}
+#main form label {
+	margin:10px 0 0 0;
+	display:block;
+}
+#main form label input{
+	outline: none;
+	padding: 2px 3px;
+}
+#main form label input.text {
+	width:200px;
+	height:25px;
+}
+#main form label .vcode {
+	display:block;
+	margin:0 0 0 56px;
+}
+#main form label input.submit {
+	width:210px;
+	display:block;
+	height:35px;
+	cursor:pointer;
+	margin:0 0 0 56px;
+}
+img{
+	cursor: pointer;
+}
