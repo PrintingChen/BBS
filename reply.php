@@ -66,6 +66,7 @@
 	<script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
     <script type="text/javascript" src="kindeditor/kindeditor-all-min.js"></script>
     <script type="text/javascript" src="kindeditor/lang/zh-CN.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript">
         var editor;
         KindEditor.ready(function(K) {

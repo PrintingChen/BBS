@@ -1,9 +1,12 @@
-<?php
+﻿<?php
     //定义常量ON来获取访问页面的权限
     define('ON', true);
     //引入公共文件
     require_once 'inc/common.inc.php';
     $link = connect();
+
+    //判断是否处于登录的状态
+    $member_id = login_state($link); 
 
     //页面信息的查询
     $sql_info = "select * from ws_info where id=1";
@@ -34,6 +37,8 @@
 	<link rel="stylesheet" href="style/public.css">
 	<link rel="stylesheet" href="style/common.css">
 	<link rel="stylesheet" href="style/list.css">
+	<script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
 </head>
 <body>
 <?php require_once 'inc/header.inc.php';?>	

@@ -4,6 +4,11 @@
     require_once '../inc/common.inc.php'; //引入公共文件
 
     $link = connect();
+	
+    //页面信息的查询
+    $sql = "select * from ws_info where id=1";
+    $result1 = execute($link, $sql);
+    $data_info = fetch_array($result1);
 
     //管理员是否登录
     if (!manage_login_state($link)) {
@@ -11,10 +16,14 @@
         exit();
     }
 
-    //页面信息的查询
-    $sql = "select * from ws_info where id=1";
-    $result = execute($link, $sql);
-    $data_info = fetch_array($result);
+	//判断是否为超级管理员，只有超级管理员才有权限访问此页面
+	$sql_manage = "select * from ws_manage where name='{$_SESSION['manage']['name']}'";
+	$result_manage = execute($link, $sql_manage);
+	$data_manage = fetch_array($result_manage);
+	if ($data_manage['level'] != '1'){
+		skip_manage('index.php', 'error', '您不是超级管理员，没有权限访问！');
+        exit();
+	}
 
     /*开始验证id*/
     if (!isset($_GET['id']) || !is_numeric($_GET['id'])) { //判断id是否存在或为数字或数字字符串         

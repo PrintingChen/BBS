@@ -14,17 +14,24 @@
     //判断是否处于登录状态
     $member_id = login_state($link);
     
-    $sql_sel = "select * from ws_father_module order by sort";
-    $sql_total = "select * from ws_content";
-    $sql_total_today = "select * from ws_content where time>CURDATE()";
-    $sql_member = "select * from ws_member";
-    $result_total = execute($link, $sql_total);
-    $result_total_today = execute($link, $sql_total_today);
-    $result_member = execute($link, $sql_member);
-    $total = mysqli_num_rows($result_total);
-    $total_today = mysqli_num_rows($result_total_today);
-    $total_member = mysqli_num_rows($result_member);
+    //父版块信息
+    $sql_sel = "select * from ws_father_module order by sort";  
     $result_father = execute($link, $sql_sel);  
+
+    //帖子总数
+    $sql_total = "select * from ws_content";
+    $result_total = execute($link, $sql_total);
+    $total = mysqli_num_rows($result_total);
+
+    //今日总帖子
+    $sql_total_today = "select * from ws_content where time>CURDATE()";
+    $result_total_today = execute($link, $sql_total_today);
+    $total_today = mysqli_num_rows($result_total_today);
+
+    //会员总数
+    $sql_member = "select * from ws_member";
+    $result_member = execute($link, $sql_member);
+    $total_member = mysqli_num_rows($result_member);
     
 ?>
 <!DOCTYPE html>
@@ -68,16 +75,18 @@
         </div>
         <div class="latest_reply">
             <h4>最新回复</h4>
+            <ul>
          <?php
-            /*$sql = "select wc.title from ws_reply wr,ws_content wc where wr.content_id=wc.id order by id desc limit 0,10";
-            $result = execute($link, $sql);
-            while($data = fetch_array($result)){
-                $sql_son = "select wsm.module_name,wm.user from ws_son_module wsm,ws_member wm where wsm.id={$data['module_id']} and wm.id={$data['member_id']}";
-                $result_son = execute($link, $sql_son);
-                $data_son = fetch_array($result_son);*/
+            $sql_reply = "select * from ws_reply order by id desc limit 0,10";
+            $result_reply = execute($link, $sql_reply);
+            while($data_reply = fetch_array($result_reply)){
+                $sql_member = "select wc.id,wc.title,wm.user,wsm.module_name from ws_content wc,ws_member wm,ws_son_module wsm where wc.id={$data_reply['content_id']} and wm.id=wc.member_id and wc.module_id=wsm.id";
+                $result_member = execute($link, $sql_member);
+                $data_member = fetch_array($result_member);
         ?>
-                <li>[子版块]&nbsp;<a href="show.php?cid=<?php  ?>"><?php ?></a><span>[作者]</span></li>
-        <?php //}?>   
+                <li>[<?php echo $data_member['module_name']?>]&nbsp;<a href="show.php?cid=<?php echo $data_member['id']?>"><?php echo $data_member['title'] ?></a><span>[<?php echo $data_member['user']?>]</span></li>
+        <?php }?>  
+       	 </ul> 
         </div>
     </div>
 
@@ -122,7 +131,5 @@
 
     <?php require_once 'inc/footer.inc.php';?>
 </div>
-
-
 </body>
 </html>

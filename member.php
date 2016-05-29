@@ -46,6 +46,7 @@
 	<link rel="stylesheet" href="style/list.css">
 	<script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
 	<script type="text/javascript" src="js/member.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
 </head>
 <body>
 	<?php require_once 'inc/header.inc.php';?>
@@ -83,7 +84,7 @@
 				<li>
 					<div class="smallPic">
 						<a href="javascript:void(0);">
-							<img title="<?php echo $data_content['user']?>" width="45" height="45" src="<?php if($data_content['photo'] != ''){echo $data_content['photo'];}else{echo 'images/2374101_small.jpg';}?>" />
+							<img title="<?php echo $data_content['user']?>" width="45" height="45" src="<?php if($data_content['photo'] != ''){echo $data_content['photo'];}else{echo 'images/head.png';}?>" />
 						</a>
 					</div>
 					<div class="subject">
@@ -125,13 +126,13 @@ EOT;
 			<div class="member_big">
 				<dl>
 					<dt>
-						<img width="180" height="180" src="<?php if($data_member['photo'] != ''){echo $data_member['photo'];}else{echo 'images/photo.jpg';}?>" />
+						<img width="180" height="180" src="<?php if($data_member['photo'] != ''){echo $data_member['photo'];}else{echo 'images/head.png';}?>" />
 					</dt>
 					<dd class="name"><?php echo $data_member['user']?></dd>
 					<dd style="text-align:center;padding-bottom:5px;color:#999;">帖子总数：<?php echo $count?></dd>
 					<?php
 					if ($member_id == $data_member['id']) {
-						echo "<dd class='photo' style='text-align:center;padding-bottom:5px;color:#999;'>操作：<a style='color:#f00;' target='_blank' href='member_photo_update.php'>修改头像</a></dd>";
+						echo "<dd class='photo' style='text-align:center;padding-bottom:5px;color:#999;'>操作：<a style='color:#f00;' target='_blank' href='member_photo_update.php'>修改头像</a><br><a style='color:#f00;padding-left:50px;' href='member_psw_update.php'>修改密码</a></dd>";
 					}
 					?>
 					

@@ -79,22 +79,22 @@ h4{
 	width: 475px;
 	float: left;
 }
-.quote_reply .latest_quote ul li{
+.quote_reply .latest_quote ul li, .quote_reply .latest_reply ul li{
 	line-height: 30px;
 	border-bottom: 1px dashed #666;
 	padding-left: 10px;
 	position: relative;
 }
-.quote_reply .latest_quote ul li span{
+.quote_reply .latest_quote ul li span, .quote_reply .latest_reply ul li span{
 	position: absolute;
 	right: 2px;
 	top: 0px;
 	color: #f60;
 }
-.quote_reply .latest_quote ul li a{
+.quote_reply .latest_quote ul li a, .quote_reply .latest_reply ul li a{
 	color: #666;
 }
-.quote_reply .latest_quote ul li a:hover{
+.quote_reply .latest_quote ul li a:hover, .quote_reply .latest_reply ul li a:hover{
 	color: #33ac0a;
 }
 .quote_reply .latest_reply{

@@ -14,12 +14,15 @@ require_once 'inc/common.inc.php';
 </head>
 <body>
 <?php
-	$now = microtime(true);
-	for ($i=0; $i < 10000; $i++) { 
-		
-	}
-	$end = microtime(true) - $now;
-	echo round($end, 6);
+	setcookie("a", '123', time()+100);
+
+	setcookie("a", '', time()-100);
+
+
+	print_r($_COOKIE['a']);
+
+
+
 ?>
 </body>
 </html>

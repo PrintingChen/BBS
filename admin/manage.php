@@ -6,6 +6,11 @@
     require_once '../inc/common.inc.php';
     
     $link = connect();
+	
+	//页面信息的查询
+    $sql_info = "select * from ws_info where id=1";
+    $result1 = execute($link, $sql_info);
+    $data_info = fetch_array($result1);
 
     //管理员是否登录
     if (!manage_login_state($link)) {
@@ -13,16 +18,18 @@
         exit();
     }
 
-	//页面信息的查询
-    $sql_info = "select * from ws_info where id=1";
-    $result = execute($link, $sql_info);
-    $data_info = fetch_array($result);
-
     //管理员信息
     $sql = 'select * from ws_manage';
     $result = execute($link, $sql);
 
-    
+	//判断是否为超级管理员，只有超级管理员才有权限访问此页面
+	$sql_manage = "select * from ws_manage where name='{$_SESSION['manage']['name']}'";
+	$result_manage = execute($link, $sql_manage);
+	$data_manage = fetch_array($result_manage);
+	if ($data_manage['level'] != '1'){
+		skip_manage('index.php', 'error', '您不是超级管理员，没有权限访问！');
+        exit();
+	}    
 
 ?>
 <!doctype html>
@@ -46,7 +53,7 @@
 			<th>创建时间</th>
 			<th>操作</th>
 		</tr>
-<?php while (@$data = fetch_array($result)) {
+<?php while ($data = fetch_array($result)) {
 		if ($data['level']) {
 			$level = '超级管理员';
 		}else{

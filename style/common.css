@@ -97,13 +97,13 @@
 	background: url("../images/sousuocu.png") no-repeat 50% 50%;
 	
 }
-.header_wrap #header .login a{
+ .header_wrap #header .login a.in{
 	display: inline-block;
 	padding: 0 5px;
 	color:#fff;
 	position: absolute;
 	top:0;	
-}
+} 
 .header_wrap #header .login .signin{
 	right: 45px;
 }
@@ -151,4 +151,44 @@
     background: #488fcf;
     border-color: #2470b5 #488fcf #488fcf;
     color: #fff;
+}
+
+
+/*个人中心*/
+
+.person_center{
+	width: 85px;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.person_center:hover ul{
+	display: block;
+}
+.person_center img{
+	width: 40px;
+	height: 40px;
+	border: 0;
+	margin-top: 2px;
+}
+.person_center:hover{
+	background-color: #075FB6;
+	cursor: pointer;
+}
+.person_list{
+	width: 85px;
+	background-color: #075FB6;
+	position: absolute;
+	right: 0;
+	display: none;
+	z-index: 999999999;
+}
+.person_list li{
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+.person_list li a{
+	color: #fff;
 }

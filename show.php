@@ -67,6 +67,8 @@
 	<link rel="stylesheet" href="style/public.css">
 	<link rel="stylesheet" href="style/common.css">
 	<link rel="stylesheet" href="style/show.css">
+	<script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
 </head>
 <body>
 	<?php require_once 'inc/header.inc.php';?>
@@ -74,6 +76,7 @@
 	<div id="position" class="auto">
 	 <a href="index.php">首页</a> &gt; <a href="list_father.php?id=<?php echo $data_father['id'];?>"><?php echo $data_father['module_name'];?></a> &gt; <a href="list_son.php?id=<?php echo $data_son['id'];?>"><?php echo $data_son['module_name'];?></a> &gt; <?php echo $data_content['title'];?>
 	</div>
+	<?php if(!$data_content['state']){echo "<p style='margin-top:20px;text-align: center;'>您的帖子还未通过审核，请耐心等待管理员审核！</p>";exit();}?>
 	<div id="main" class="auto">
 		<div class="wrap1">
 			<div class="pages">
@@ -94,7 +97,7 @@
 			<div class="left">
 				<div class="face">
 					<a href="member.php?mid=<?php echo $member_id?>">
-						<img width="120" height="120" src="<?php if($data_member['photo'] != ''){echo $data_member['photo'];}else{echo "images/2374101_middle.jpg";} ?>" />
+						<img width="120" height="120" src="<?php if($data_member['photo'] != ''){echo $data_member['photo'];}else{echo "images/head.png";} ?>" />
 					</a>
 				</div>
 				<div class="name">
@@ -131,7 +134,7 @@
 			<div class="left">
 				<div class="face">
 					<a href="member.php?mid=<?php echo $data_reply['member_id']?>">
-						<img width="120" height="120" src="<?php if($data_reply['photo'] != ''){echo $data_reply['photo'];}else{echo "images/2374101_middle.jpg";} ?>" />
+						<img width="120" height="120" src="<?php if($data_reply['photo'] != ''){echo $data_reply['photo'];}else{echo "images/head.png";} ?>" />
 					</a>
 				</div>
 				<div class="name">
@@ -174,8 +177,8 @@
 			</div>
 			<div style="clear:both;"></div>
 		</div>
-	</div>	
-	
+	</div>
+
 	<?php require_once 'inc/footer.inc.php';?>
 
 </body>

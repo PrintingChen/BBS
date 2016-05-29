@@ -12,7 +12,7 @@
         skip_manage('login.php', 'error', '您还未登录！');
         exit();
     }
-
+ 
     //页面信息的查询
     $sql = "select * from ws_info where id=1";
     $result = execute($link, $sql);

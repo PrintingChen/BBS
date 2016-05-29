@@ -32,7 +32,7 @@
      * @return Ambigous <string, string/array>
      */
     function check_title($link, $data){
-        if (empty(mb_strlen($data))) {
+        if (empty($data)) {
             skip('publish.php', 'error', '标题不得为空！');
             exit();
         }

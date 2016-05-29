@@ -59,6 +59,8 @@
 <link rel="stylesheet" href="style/public.css">
 <link rel="stylesheet" href="style/common.css">
 <link rel="stylesheet" href="style/list.css">
+<script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
 <title><?php echo $data['module_name']?> - <?php echo $data_info['index_title']?></title>
 </head>
 <body>
@@ -90,7 +92,7 @@
 		<ul class="postsList">
 		<?php 
 		$sql_content = "select 
-			wc.title,wc.id,wc.time,wc.times,wc.module_id,wc.member_id,wm.user,wm.photo,wsm.module_name from ws_content wc,ws_member wm,ws_son_module wsm where 
+			wc.title,wc.id,wc.state,wc.time,wc.times,wc.module_id,wc.member_id,wm.user,wm.photo,wsm.module_name from ws_content wc,ws_member wm,ws_son_module wsm where 
 			wc.module_id in({$id_son}) and 
 			wc.member_id=wm.id and 
 			wc.module_id=wsm.id {$data['limit']}";
@@ -113,11 +115,12 @@
 		    $result_reply = execute($link, $sql_reply);
 		    $count_reply = mysqli_num_rows($result_reply);
 
+		    if($data_content['state']){
 		?>
 			<li>
 				<div class="smallPic">
 					<a href="member.php?mid=<?php echo $data_content['member_id']?>">
-						<img title="<?php echo $data_content['user']?>" width="45" height="45" src="<?php if($data_content['photo'] != ''){echo SUB_URL.$data_content['photo'];}else{echo 'images/2374101_small.jpg';}?>">
+						<img title="<?php echo $data_content['user']?>" width="45" height="45" src="<?php if($data_content['photo'] != ''){echo SUB_URL.$data_content['photo'];}else{echo 'images/head.png';}?>">
 					</a>
 				</div>
 				<div class="subject">
@@ -144,7 +147,10 @@
 				</div>
 				<div style="clear:both;"></div>
 			</li>
-		<?php }?>
+		<?php 
+		}
+			}
+		?>
 		</ul>
 		<div class="pages_wrap">
 			<a class="btn publish" href="publish.php?father_module_id=<?php echo $_GET['id']; ?>"></a>

@@ -22,14 +22,13 @@
         $clean['module_id'] = check_module($link, $_POST['module_id']);
         $clean['title'] = check_title($link, $_POST['title']);
         $clean['content'] = escape($link, $_POST['content']);
-        
         $sql_ins = "insert into ws_content(module_id,title,content,time,member_id) values({$clean['module_id']},'{$clean['title']}','{$clean['content']}',now(),{$member_id})";
         execute($link, $sql_ins);
         if (mysqli_affected_rows($link) == 1) {
             $sql = "select * from ws_content order by time desc";
             $result = execute($link, $sql);
             $data = fetch_array($result);
-            skip("show.php?cid={$data['id']}", 'ok', '恭喜你，发帖成功！');
+            skip("show.php?cid={$data['id']}", 'ok', '恭喜你，发帖成功，请等待管理员审核！');
             exit();
         }else {
             skip('register.php', 'error', '很抱歉，发帖失败！');

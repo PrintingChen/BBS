@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     //定义常量ON来获取访问页面的权限 
     define('ON', true);
     //引入公共文件
@@ -10,8 +10,8 @@
     $result = execute($link, $sql_info);
     $data_info = fetch_array($result);
 
-	//判断是否处于登录的状态
-	$member_id = login_state($link); 
+    //判断是否处于登录的状态
+    $member_id = login_state($link); 
 
     /*判断id*/
     if (!isset($_GET['id']) || !is_numeric($_GET['id'])){
@@ -58,6 +58,8 @@
 	<link rel="stylesheet" href="style/public.css">
 	<link rel="stylesheet" href="style/common.css">
 	<link rel="stylesheet" href="style/list.css">
+	<script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
 </head>
 <body>
 	<?php require_once 'inc/header.inc.php';?>
@@ -100,13 +102,13 @@
 			<ul class="postsList">
 			<?php
 				$sql_content = "select 
-					wc.title,wc.id,wc.time,wc.member_id,wc.times,wm.user,wm.photo,wsm.module_name 
+					wc.title,wc.id,wc.time,wc.member_id,wc.state,wc.times,wm.user,wm.photo,wsm.module_name 
 					from ws_content wc,ws_member wm,ws_son_module wsm where 
 					wc.module_id={$_GET['id']} and 
 					wc.member_id=wm.id and 
 					wc.module_id=wsm.id {$data['limit']}";
 					$result_content = execute($link, $sql_content);
-					while (@$data_content = fetch_array($result_content)){
+					while ($data_content = fetch_array($result_content)){
 						$data_content['title'] = htmlspecialchars($data_content['title']);
 						//最后回复时间
 						$sql = "select time from ws_reply where content_id={$data_content['id']} order by id desc limit 1";
@@ -123,12 +125,13 @@
 					    $result_reply = execute($link, $sql_reply);
 					    $count_reply = mysqli_num_rows($result_reply);				    
 
+					    if($data_content['state']){
 
 			?>
 				<li>
 					<div class="smallPic">
 						<a href="member.php?mid=<?php echo $data_content['member_id']?>">
-							<img title="<?php echo $data_content['user']?>" width="45" height="45" src="<?php if($data_content['photo'] != ''){echo SUB_URL.$data_content['photo'];}else{echo 'images/2374101_small.jpg';}?>">
+							<img title="<?php echo $data_content['user']?>" width="45" height="45" src="<?php if($data_content['photo'] != ''){echo SUB_URL.$data_content['photo'];}else{echo 'images/head.png';}?>">
 						</a>
 					</div>
 					<div class="subject">
@@ -147,7 +150,11 @@
 					</div>
 					<div style="clear:both;"></div>
 				</li>
-			<?php }?>
+
+			<?php 
+					}
+				}
+			?>
 			</ul>
 			<div class="pages_wrap">
 				<a class="btn publish" href="publish.php?son_module_id=<?php echo $_GET['id']; ?>"></a>

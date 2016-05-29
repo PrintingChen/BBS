@@ -13,6 +13,15 @@
         exit();
     }
 
+	//判断是否为超级管理员，只有超级管理员才有权限访问此页面
+	$sql_manage = "select * from ws_manage where name='{$_SESSION['manage']['name']}'";
+	$result_manage = execute($link, $sql_manage);
+	$data_manage = fetch_array($result_manage);
+	if ($data_manage['level'] != '1'){
+		skip_manage('index.php', 'error', '您不是超级管理员，没有权限访问！');
+        exit();
+	}
+
     //页面信息的查询
     $sql = "select * from ws_info where id=1";
     $result = execute($link, $sql);

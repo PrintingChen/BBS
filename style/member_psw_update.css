@@ -1,0 +1,50 @@
+#position {
+    background: url('../images/style_icon.png') 0px -60px no-repeat;
+    text-indent: 20px;
+	font-size: 12px;
+}
+#position a{
+	color: #666;
+}
+.main{
+	height: 400px;
+	margin-top: 10px;
+	color: #7b7b7b;
+}
+.main .form-main{
+	width: 500px;
+	height: 400px;
+	margin: 0 auto;
+	background-color: #fff;
+	padding-top: 20px;
+}
+.main .form-main .basic-info{
+	width: 100%;
+	height: 80px;
+	line-height: 80px;
+}
+.main .form-main .basic-info span{
+	display: inline-block;
+	width: 110px;
+	height: 100%;
+	text-indent: 10px;
+}
+.main .form-main .basic-info input.basic-input{
+	width: 70%;
+	height: 38px;
+	padding: 0 5px;
+	outline: none;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+}
+.main .form-main .basic-info input.btn{
+	width: 100px;
+	height: 38px;
+	margin-left: 110px;
+	cursor: pointer;
+}
+.main .form-main .basic-info input.basic-input:focus{
+	border: 0px;
+	border-color: #65B8E9;
+	box-shadow: rgba(101, 184, 233, 0.6) 0px 0px 10px;
+}

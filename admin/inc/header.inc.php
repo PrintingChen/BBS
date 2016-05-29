@@ -53,7 +53,7 @@
 				     echo "<li><a href='son_module_update.php' class='current'>修改子版块</a></li>";
 				 }
 				?>
-				<li><a href="#">帖子管理</a></li>
+				<li><a <?php if (basename($_SERVER['SCRIPT_NAME'])=='post_manage.php'){echo "class='current'";}?> href="post_manage.php">帖子管理</a></li>
 			</ul>
 		</li>
 		<li>

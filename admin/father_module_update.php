@@ -12,8 +12,8 @@
 
     //页面信息的查询
     $sql = "select * from ws_info where id=1";
-    $result = execute($link, $sql);
-    $data_info = fetch_array($result);
+    $result1 = execute($link, $sql);
+    $data_info = fetch_array($result1);
 
     /*开始验证id*/
     if (!isset($_GET['id']) || !is_numeric($_GET['id'])) { //判断id是否存在或为数字或数字字符串         
@@ -57,7 +57,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>修改父版块 - <?php ehco $data_info['index_title']?></title>
+<title>修改父版块 - <?php echo $data_info['index_title']?></title>
 <link rel="stylesheet" href="style/public.css"> 
 <link rel="stylesheet" href="style/main.css">
 <script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>

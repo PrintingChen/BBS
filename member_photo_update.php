@@ -54,7 +54,7 @@
 		<h2>更改头像</h2>
 		<div class="pic">
 			<h3>原头像：</h3>
-			<img width="180" height="180" src="<?php if($data_member['photo']!=''){echo SUB_URL.$data_member['photo'];}else{echo 'images/photo.jpg';}?>" />
+			<img width="180" height="180" src="<?php if($data_member['photo']!=''){echo SUB_URL.$data_member['photo'];}else{echo 'images/head.png';}?>" />
 			<br />
 			最佳图片尺寸：180*180
 		</div>
