@@ -18,7 +18,37 @@
 	}
 
 	if (isset($_POST['submit'])) {
-		
+		$sql = "select * from ws_member where id={$member_id}";
+		$result = execute($link, $sql);
+		$data = fetch_array($result);
+		$opsw = md5($_POST['opsw']);
+		$npsw = md5($_POST['npsw']);
+
+		//判断旧密码是否正确
+		if ($opsw != $data['pwd']) {
+			skip('member_psw_update.php', 'error', '旧密码错误，请重试!');
+			exit();
+		}
+		//旧密码和新密码不能一致
+		if ($npsw == $data['pwd']) {
+			skip('member_psw_update.php', 'error', '旧密码不能和新密码一致，请重试!');
+			exit();
+		}
+
+		//密码修改
+		$sql_update = "update ws_member set pwd='{$npsw}' where id={$member_id}";
+		$result_update = execute($link, $sql_update);
+		if (mysqli_affected_rows($link)) {
+			//密码修改成功后将原来登录的信息cookie删除掉
+			setcookie('ws[user]', '', time()-36000);
+			setcookie('ws[pwd]', '', time()-36000);
+			skip('login.php', 'ok', '您的密码已修改，请重新登录!');
+			exit();
+		}else{
+			skip('member_psw_update.php', 'error', '密码修改失败!');
+			exit();
+		}
+
 	}
 
 

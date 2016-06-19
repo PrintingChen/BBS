@@ -10,9 +10,6 @@
 <div id="top">
 	<div class="logo">后台管理</div>
 	<ul class="nav">
-		<li><a href="#">标签一</a></li>
-		<li><a href="#">标签二</a></li>
-		<li><a href="#">标签三</a></li>
 	</ul>
 	<div class="login_info">
 		<a href="../index.php" target="_blank">网站首页</a>&nbsp;|

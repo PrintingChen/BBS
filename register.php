@@ -38,6 +38,7 @@
 	   //数据添加
 	   $sql_ins = "insert into ws_member(user,pwd,sex,email,qq,register_time,last_time) values('{$clean['user']}','{$clean['pwd']}','{$_POST['sex']}','{$clean['email']}',{$clean['qq']},NOW(),NOW())";
 	   $result = execute($link, $sql_ins);
+       
 	   //判断数据是否添加成功
 	   if (mysqli_affected_rows($link) == 1) {
 	       setcookie('ws[user]', $clean['user']);

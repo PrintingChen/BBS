@@ -12,7 +12,7 @@
     define('DB_HOST', 'localhost');
     define('DB_USER', 'root');
     define('DB_PWD', '');
-    define('DB_DATABASE', 'webshare');
+    define('DB_DATABASE', 'bbs');
     define('DB_PORT', 3306);
 
     //项目在服务器上的绝对路径

@@ -30,7 +30,7 @@
      */
     function check_pwd($link, $data){
         //密码长度不得小于6位或大于20位
-        if ( mb_strlen($data) < 6 || mb_strlen($data) > 20 ) {
+        if ( mb_strlen($data) < 6 && mb_strlen($data) > 20 ) {
             skip('login.php', 'error', '密码长度不得小于6位或大于20位！');
             exit();
         }

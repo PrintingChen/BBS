@@ -26,8 +26,6 @@
 		<div class="logo"><a href="index.php">体 育 吧</a></div>
 		<ul class="list">
 			<li><a class="curr" href="index.php">首页</a></li>
-			<li><a href="#">导航一</a></li>
-			<li><a href="#">导航二</a></li>
 		</ul>
 		<div class="login">
     		<form method="get" action="search.php">

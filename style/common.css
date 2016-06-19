@@ -173,7 +173,7 @@
 	margin-top: 2px;
 }
 .person_center:hover{
-	background-color: #075FB6;
+	/* background-color: #075FB6; */
 	cursor: pointer;
 }
 .person_list{
